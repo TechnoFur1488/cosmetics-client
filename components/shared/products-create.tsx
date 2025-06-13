@@ -46,7 +46,7 @@ export const ProductsCreate = () => {
         }
     })
 
-    const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>, field: any) => {
+    const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>, field: { onChange: (file: File) => void }) => {
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0]
             field.onChange(file)
@@ -89,9 +89,9 @@ export const ProductsCreate = () => {
                                     <FormLabel>Изображение</FormLabel>
                                     {previewUrl && (
                                         <div className="relative w-24 h-24 sm:w-32 sm:h-32">
-                                            <Image 
-                                                src={previewUrl} 
-                                                alt="Preview" 
+                                            <Image
+                                                src={previewUrl}
+                                                alt="Preview"
                                                 fill
                                                 className="object-cover rounded-md"
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -149,8 +149,8 @@ export const ProductsCreate = () => {
                                     <FormItem>
                                         <FormLabel>Цена</FormLabel>
                                         <FormControl>
-                                            <Input 
-                                                type="number" 
+                                            <Input
+                                                type="number"
                                                 {...field}
                                                 onChange={e => field.onChange(Number(e.target.value))}
                                             />
@@ -167,8 +167,8 @@ export const ProductsCreate = () => {
                                     <FormItem>
                                         <FormLabel>Скидка</FormLabel>
                                         <FormControl>
-                                            <Input 
-                                                type="number" 
+                                            <Input
+                                                type="number"
                                                 {...field}
                                                 onChange={e => field.onChange(Number(e.target.value))}
                                             />
@@ -186,7 +186,7 @@ export const ProductsCreate = () => {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Каталог</FormLabel>
-                                        <Select 
+                                        <Select
                                             value={String(field.value)}
                                             onValueChange={(value) => {
                                                 const numValue = Number(value)
@@ -218,7 +218,7 @@ export const ProductsCreate = () => {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Подкаталог</FormLabel>
-                                        <Select 
+                                        <Select
                                             value={String(field.value)}
                                             onValueChange={(value) => field.onChange(Number(value))}
                                         >

@@ -102,7 +102,7 @@ export const Profil = () => {
                                     <FormField
                                         control={form.control}
                                         name="img"
-                                        render={({ field }) => (
+                                        render={() => (
                                             <FormItem>
                                                 <div className="relative">
                                                     <FormControl>

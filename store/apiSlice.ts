@@ -62,7 +62,7 @@ interface Order {
 export const apiSlice = createApi({
     reducerPath: "api",
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:5000",
+        baseUrl: "cosmetics-server-production.up.railway.app",
         prepareHeaders: (headers) => {
             const token = localStorage.getItem("token")
             if (token) {

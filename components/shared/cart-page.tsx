@@ -24,7 +24,7 @@ export const CartPage = () => {
         try {
             await deleteCartItem(id).unwrap()
         } catch (err) {
-            console.error
+            console.error(err)
         }
     }
 

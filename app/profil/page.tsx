@@ -3,7 +3,7 @@
 import { Container } from "@/components/shared/container";
 import { Profil } from "@/components/shared/profil";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function PageProfil() {
     const router = useRouter()
