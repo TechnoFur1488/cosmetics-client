@@ -84,7 +84,7 @@ export const ProductsCreate = () => {
                         <FormField
                             control={form.control}
                             name="img"
-                            render={({ field: { value, onChange, ...field } }) => (
+                            render={({ field: { onChange, ...field } }) => (
                                 <FormItem>
                                     <FormLabel>Изображение</FormLabel>
                                     {previewUrl && (
@@ -104,6 +104,7 @@ export const ProductsCreate = () => {
                                             accept="image/jpeg,image/png,image/webp"
                                             onChange={(e) => handleImageChange(e, { onChange })}
                                             {...field}
+                                            value={undefined}
                                         />
                                     </FormControl>
                                     <FormMessage />
